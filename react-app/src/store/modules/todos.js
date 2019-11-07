@@ -23,7 +23,7 @@ export const createTodo = payload => ({
 })
 export const updateTodo = {
   state: (todoId, payload) => ({ type: TODOS_ACTION.UPDATE_STATE, todoId, payload }),
-  text: (todoId, payload) => ({ type: TODOS_ACTION.UPDATE_STATE, todoId, payload })
+  text: (todoId, payload) => ({ type: TODOS_ACTION.UPDATE_TEXT, todoId, payload })
 }
 export const deleteTodo = todoId => ({ type: TODOS_ACTION.DELETE, todoId })
 
@@ -36,6 +36,7 @@ export default function todos(state = {}, action) {
   switch (action.type) {
     case TODOS_ACTION.CREATE:
       return newState({
+        id: action.todoId,
         date: action.date,
         state: action.state,
         text: action.payload

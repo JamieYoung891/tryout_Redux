@@ -7,7 +7,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer from "./store/modules"
 
-import {createTodo} from './store/modules/todos'
+import { createTodo } from './store/modules/todos'
 
 const theStore = createStore(
   rootReducer,
@@ -23,9 +23,9 @@ theStore.dispatch(createTodo("redux"))
 ReactDOM.render(
   <Provider store={theStore}>
     <App />
-  </Provider>
-
-  , document.getElementById('root'));
+  </Provider>,
+  document.getElementById('root')
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

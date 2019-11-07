@@ -9,14 +9,14 @@ export const FILTERS_ACTION = {
 }
 export const FILTERS_STATE = {
   STATE: {
-    ...TODOS_STATE,
-    ALL: 'ALL'
+    ALL: 'ALL',
+    ...TODOS_STATE
   },
   DATE: {
+    ALL: 'ALL',
     DAY_THIS: 'DAY_THIS',
     WEEK_THIS: 'WEEK_THIS',
-    MONTH_THIS: 'MONTH_THIS',
-    ALL: 'ALL'
+    MONTH_THIS: 'MONTH_THIS'
   }
 }
 const defaultFilter = {
@@ -26,7 +26,7 @@ const defaultFilter = {
 
 
 
-export const changeFilter = {
+export const updateFilter = {
   state: payload => ({ type: FILTERS_ACTION.CHANGE_STATE, payload }),
   date: payload => ({ type: FILTERS_ACTION.CHANGE_DATE, payload })
 }
